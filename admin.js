@@ -118,13 +118,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const filtered = allOrders.filter(ord => {
       // Status Filter
-      if (currentFilter !== 'all' && ord.paymentStatus !== currentFilter) {
+      const ordStatus = ord.paymentStatus || 'Pending';
+      if (currentFilter !== 'all' && ordStatus !== currentFilter) {
         return false;
       }
 
       // Search Filter
       if (searchVal) {
-        const textStr = `${ord.orderId} ${ord.name} ${ord.email} ${ord.contact} ${ord.city} ${ord.package}`.toLowerCase();
+        const textStr = `${ord.orderId || ''} ${ord.name || ''} ${ord.email || ''} ${ord.contact || ''} ${ord.city || ''} ${ord.package || ''}`.toLowerCase();
         if (!textStr.includes(searchVal)) {
           return false;
         }
