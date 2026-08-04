@@ -115,7 +115,10 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const pkg = btn.getAttribute('data-package');
-      openModal(pkg);
+      let targetPkg = '699';
+      if (pkg && pkg.includes('499')) targetPkg = '499';
+      if (pkg && pkg.includes('999')) targetPkg = '999';
+      window.location.href = `checkout.html?package=${targetPkg}`;
     });
   });
 

@@ -337,6 +337,7 @@
 
   .checkout-summary-card {
     position: static;
+    order: -1;
   }
 }
 
