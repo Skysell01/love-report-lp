@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Your Personalised Love Report - Rudraveda</title>
+  <meta name="description" content="Complete your order for Your Personalised Vedic Love Report. 100% confidential and delivered within 24 hours.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,600..900;1,600..900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="checkout.css">
+</head>
+<body class="checkout-page-body">
+
+  <!-- Compact Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-content">
+      <span class="pulse-dot"></span>
+      <p>🔒 <strong>256-Bit SSL Encrypted Checkout:</strong> Your personal birth details are 100% confidential.</p>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header checkout-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/rudraveda-logo.png" alt="RUDRAVEDA Logo" class="site-rudraveda-logo">
+      </a>
+      <a href="index.html" class="back-link">← Back to Main Page</a>
+    </div>
+  </header>
+
+  <!-- Main Checkout Container -->
+  <main class="checkout-main section-padding">
+    <div class="container">
+
+      <div class="checkout-header-title text-center">
+        <span class="section-subtitle">Final Step</span>
+        <h1 class="section-title">Complete Your <span class="highlight-text">Love Report Order</span></h1>
+        <p class="section-desc">Fill in your birth details below to calculate your Kundali & planetary positions</p>
+      </div>
+
+      <div class="checkout-grid">
+        
+        <!-- Left Column: Order Form -->
+        <div class="checkout-form-card">
+          <div class="form-card-header">
+            <h3>📋 Customer & Birth Details</h3>
+            <p>Accurate birth details ensure 98.4% precision in your report</p>
+          </div>
+
+          <form id="checkout-form" class="checkout-form">
+            <!-- Full Name -->
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Enter your full name" class="form-control">
+            </div>
+
+            <div class="form-row-2">
+              <!-- Email Address -->
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="name@example.com" class="form-control">
+              </div>
+
+              <!-- Contact / WhatsApp Number -->
+              <div class="form-group">
+                <label for="contact">Contact / WhatsApp Number *</label>
+                <input type="tel" id="contact" name="contact" required placeholder="e.g. 9876543210" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-row-3">
+              <!-- Date of Birth -->
+              <div class="form-group">
+                <label for="dob">Date of Birth *</label>
+                <input type="date" id="dob" name="dob" required class="form-control">
+              </div>
+
+              <!-- Gender -->
+              <div class="form-group">
+                <label for="gender">Gender *</label>
+                <select id="gender" name="gender" required class="form-control">
+                  <option value="Female" selected>Female</option>
+                  <option value="Male">Male</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <!-- City / Place of Birth -->
+              <div class="form-group">
+                <label for="city">City / Place of Birth *</label>
+                <input type="text" id="city" name="city" required placeholder="e.g. New Delhi, Delhi" class="form-control">
+              </div>
+            </div>
+
+            <!-- Hidden Selected Package Data -->
+            <input type="hidden" id="selected-pkg-id" name="package" value="699">
+            <input type="hidden" id="selected-pkg-title" name="package_title" value="Standard Package - PDF + 15 Min Call (₹699)">
+
+            <!-- Payment Gateway Notice Box -->
+            <div class="payment-notice-box">
+              <div class="notice-icon">💳</div>
+              <div class="notice-text">
+                <strong>Payment Gateway Integration Ready</strong>
+                <p>Payment step enabled. Submitting this form will register your order and sync details directly to Google Sheets.</p>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-glow btn-block btn-lg submit-order-btn" id="submit-btn">
+              Proceed to Complete Order →
+            </button>
+
+            <div class="security-guarantee-strip">
+              <span>🔒 256-Bit SSL Encrypted</span>
+              <span>⚡ Delivery within 24 Hours</span>
+              <span>💖 100% Confidential</span>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right Column: Package Summary Card -->
+        <div class="checkout-summary-card">
+          <div class="summary-header">
+            <h3>📦 Order Summary</h3>
+            <span class="badge-tag">Selected Package</span>
+          </div>
+
+          <!-- Package Switcher Buttons -->
+          <div class="pkg-switcher">
+            <button type="button" class="pkg-switch-btn" data-price="499" data-name="Basic Package - Only PDF (₹499)">
+              Basic ₹499
+            </button>
+            <button type="button" class="pkg-switch-btn active" data-price="699" data-name="Standard Package - PDF + 15 Min Call (₹699)">
+              Standard ₹699
+            </button>
+            <button type="button" class="pkg-switch-btn" data-price="999" data-name="VIP Package - PDF + 30 Min Call (₹999)">
+              VIP ₹999
+            </button>
+          </div>
+
+          <!-- Selected Package Graphic & Title -->
+          <div class="selected-package-display">
+            <div id="pkg-graphic-container" class="pkg-graphic-view">
+              <!-- Rendered dynamically by checkout.js -->
+            </div>
+            <h4 id="pkg-display-name">Standard Package</h4>
+            <p id="pkg-display-desc">Love Report PDF + 15 Min 1-on-1 Astrologer Consultation</p>
+          </div>
+
+          <!-- Price Breakdown Table -->
+          <div class="price-breakdown-list">
+            <div class="price-row">
+              <span>Original Price</span>
+              <span id="pkg-original-price" class="strike-price">₹1,499</span>
+            </div>
+            <div class="price-row highlight-green">
+              <span>Special Festival Discount</span>
+              <span id="pkg-discount">-₹800 (53% OFF)</span>
+            </div>
+            <div class="price-row total-row">
+              <strong>Total Payable</strong>
+              <strong id="pkg-total-price" class="final-price">₹699</strong>
+            </div>
+          </div>
+
+          <!-- Included Features Checklist -->
+          <div class="checkout-features-box">
+            <h4>What You Get Today:</h4>
+            <ul id="pkg-features-list" class="check-list-sm">
+              <!-- Populated by checkout.js -->
+            </ul>
+          </div>
+
+          <!-- Guarantees Box -->
+          <div class="trust-guarantee-card">
+            <div class="guarantee-icon">🛡️</div>
+            <div>
+              <strong>100% Satisfaction & Privacy</strong>
+              <p>Your details are never shared with third parties. Report sent directly to your WhatsApp & Email.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Success Confirmation Modal -->
+  <div class="modal-overlay" id="checkout-success-modal">
+    <div class="modal-container text-center">
+      <div class="success-icon">🎉</div>
+      <h2>Order Placed Successfully!</h2>
+      <p class="order-id-badge">Order ID: <strong id="success-order-id">ORD-894120</strong></p>
+      
+      <div class="success-details-box">
+        <p>Thank you <strong id="success-user-name">Client</strong>! Your birth details have been submitted and registered.</p>
+        <p>Our senior Vedic astrologers are analyzing your Kundali. Your PDF Love Report will be sent on WhatsApp (<strong id="success-user-contact">--</strong>) within 24 hours.</p>
+      </div>
+
+      <div class="modal-actions">
+        <a href="index.html" class="btn btn-primary">Return to Homepage</a>
+        <a href="admin.html" class="btn btn-secondary">Open Admin Panel</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="checkout.js"></script>
+</body>
+</html>

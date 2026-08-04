@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel | Rudraveda Love Report Orders & Google Sheets Sync</title>
+  <meta name="robots" content="noindex, nofollow">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,600..900;1,600..900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-page-body">
+
+  <!-- Admin Login Overlay Modal / Screen -->
+  <div class="admin-login-screen" id="admin-login-screen">
+    <div class="login-card">
+      <div class="login-header text-center">
+        <img src="assets/rudraveda-logo.png" alt="RUDRAVEDA Logo" class="login-brand-logo">
+        <h2>Admin Dashboard Login</h2>
+        <p>Enter your credentials to access live orders & Google Sheet settings</p>
+      </div>
+
+      <form id="admin-login-form" class="login-form">
+        <div class="form-group">
+          <label for="admin-email">Admin ID / Email</label>
+          <input type="email" id="admin-email" required placeholder="admin@admin.com" class="form-control" value="admin@admin.com">
+        </div>
+
+        <div class="form-group">
+          <label for="admin-password">Password</label>
+          <input type="password" id="admin-password" required placeholder="admin@admin" class="form-control" value="admin@admin">
+        </div>
+
+        <div id="login-error-msg" class="login-error hidden">
+          ⚠️ Invalid Email or Password. Please check credentials.
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg">
+          Login to Dashboard →
+        </button>
+
+        <div class="login-demo-hint text-center">
+          <small>Default ID: <code>admin@admin.com</code> | Pass: <code>admin@admin</code></small>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main Dashboard Container (Visible after login) -->
+  <div class="admin-dashboard-wrapper hidden" id="admin-dashboard-view">
+
+    <!-- Admin Top Navbar -->
+    <header class="admin-header">
+      <div class="container admin-header-container">
+        <div class="admin-brand">
+          <img src="assets/rudraveda-logo.png" alt="RUDRAVEDA Logo" class="admin-logo-img">
+          <span class="admin-badge">ADMIN CONTROL PANEL</span>
+        </div>
+
+        <div class="admin-nav-actions">
+          <span class="admin-user-tag">👤 admin@admin.com</span>
+          <a href="index.html" class="btn btn-secondary btn-sm" target="_blank">View Site ↗</a>
+          <button class="btn btn-dark btn-sm" id="admin-logout-btn">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Dashboard Content Area -->
+    <main class="admin-main section-padding">
+      <div class="container">
+
+        <!-- Analytics Overview Cards -->
+        <div class="analytics-grid">
+          <div class="metric-card">
+            <div class="metric-icon">📦</div>
+            <div class="metric-info">
+              <span class="metric-label">Total Orders</span>
+              <h3 id="stat-total-orders">0</h3>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon">💰</div>
+            <div class="metric-info">
+              <span class="metric-label">Total Value</span>
+              <h3 id="stat-total-revenue">₹0</h3>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon">⌛</div>
+            <div class="metric-info">
+              <span class="metric-label">Pending Payments</span>
+              <h3 id="stat-pending-orders">0</h3>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon">✅</div>
+            <div class="metric-info">
+              <span class="metric-label">Successful Payments</span>
+              <h3 id="stat-completed-orders">0</h3>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Orders Table Card -->
+        <div class="admin-card orders-table-card">
+          <div class="table-toolbar">
+            <div class="toolbar-left">
+              <h3>📋 Registered Customer Orders</h3>
+              <!-- Filter Tabs -->
+              <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">All Orders</button>
+                <button class="filter-tab" data-filter="Pending">Pending</button>
+                <button class="filter-tab" data-filter="Success">Paid (Success)</button>
+              </div>
+            </div>
+
+            <div class="toolbar-right">
+              <input type="text" id="order-search-input" class="form-control search-control" placeholder="🔍 Search Order ID, Name, Email...">
+              <button class="btn btn-secondary btn-sm" id="export-csv-btn">Export CSV 📥</button>
+              <button class="btn btn-dark btn-sm" id="clear-demo-btn">Clear All</button>
+            </div>
+          </div>
+
+          <!-- Orders Table Container -->
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Order ID & Date</th>
+                  <th>Customer Details</th>
+                  <th>DOB / Gender / City</th>
+                  <th>Selected Package</th>
+                  <th>Price</th>
+                  <th>Payment Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="orders-table-body">
+                <!-- Populated dynamically by admin.js -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Empty State View -->
+          <div class="empty-orders-view hidden" id="empty-orders-msg">
+            <div class="empty-icon">📂</div>
+            <h4>No Orders Found</h4>
+            <p>Customer submissions from the checkout page will appear here in real-time.</p>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
