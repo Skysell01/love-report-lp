@@ -2003,6 +2003,97 @@ ul {
     grid-template-columns: 1fr;
   }
 
+  /* Compact & Non-overflowing Pricing Cards on Mobile */
+  .pricing-grid {
+    gap: 1.5rem;
+    padding: 0;
+  }
+
+  .pricing-card {
+    padding: 1.5rem 1.15rem;
+    border-radius: var(--radius-md);
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  .pricing-card .pkg-header {
+    margin-bottom: 0.35rem;
+  }
+
+  .pricing-card h3 {
+    font-size: 1.35rem;
+  }
+
+  .pricing-card .pkg-sub {
+    font-size: 0.85rem;
+  }
+
+  .pricing-card .price-box {
+    margin: 0.35rem 0;
+  }
+
+  .pricing-card .current-price {
+    font-size: 1.75rem;
+  }
+
+  .pkg-image-box {
+    margin: 0.5rem 0;
+    padding: 0.25rem;
+  }
+
+  .pkg-card-book-img {
+    max-width: 115px;
+  }
+
+  .pkg-bundle-box {
+    padding: 0.5rem 0.35rem;
+    margin: 0.5rem 0 0.75rem;
+    gap: 0.35rem;
+  }
+
+  .bundle-book-img {
+    max-width: 70px;
+  }
+
+  .bundle-astro-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .bundle-plus-icon {
+    font-size: 1.25rem;
+  }
+
+  .bundle-chip {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.4rem;
+  }
+
+  .pkg-summary-box {
+    padding: 0.6rem 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .pkg-summary-text {
+    font-size: 0.825rem;
+    line-height: 1.4;
+  }
+
+  .ribbon-corner-box {
+    width: 90px;
+    height: 90px;
+    top: -6px;
+    left: -6px;
+  }
+
+  .ribbon-corner-box .ribbon-text {
+    top: 18px;
+    left: -35px;
+    width: 125px;
+    font-size: 0.55rem;
+    padding: 0.2rem 0;
+  }
+
   .mobile-sticky-bar {
     display: flex;
   }
