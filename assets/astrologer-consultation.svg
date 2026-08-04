@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="astroGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFE0B2" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FFF3E0" stop-opacity="0.3"/>
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#701D03" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <!-- Outer Circular Glow Plate -->
+  <circle cx="100" cy="100" r="90" fill="url(#astroGlow)" stroke="#F5D6B0" stroke-width="3"/>
+  <circle cx="100" cy="100" r="80" fill="none" stroke="#E65100" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- Astrologer Silhouette & Accessories -->
+  <g filter="url(#shadow)">
+    <!-- Turban / Headgear (Vedic Astrologer) -->
+    <path d="M 65 75 Q 100 45 135 75 Q 140 85 130 95 Q 100 85 70 95 Q 60 85 65 75 Z" fill="#E65100"/>
+    <path d="M 85 60 Q 100 40 115 60" stroke="#FFD54F" stroke-width="3" fill="none"/>
+    <circle cx="100" cy="55" r="5" fill="#FFD54F"/>
+
+    <!-- Head -->
+    <circle cx="100" cy="95" r="24" fill="#FFE0B2" stroke="#D45B00" stroke-width="2"/>
+    
+    <!-- Tilak on Forehead -->
+    <path d="M 98 84 L 102 84 L 100 94 Z" fill="#D32F2F"/>
+    <line x1="94" y1="86" x2="106" y2="86" stroke="#FFB300" stroke-width="1.5"/>
+
+    <!-- Body / Kurta -->
+    <path d="M 50 165 C 50 130 70 120 100 120 C 130 120 150 130 150 165 Z" fill="#D45B00"/>
+    <path d="M 85 120 L 100 145 L 115 120" fill="none" stroke="#FFD54F" stroke-width="3"/>
+    
+    <!-- Rudraksha Mala -->
+    <path d="M 75 130 Q 100 160 125 130" stroke="#5D4037" stroke-width="3" stroke-dasharray="3,3" fill="none"/>
+    <circle cx="100" cy="148" r="4" fill="#8D6E63"/>
+
+    <!-- Consultation Headset / Microphone Icon -->
+    <path d="M 68 95 C 68 70 132 70 132 95 L 132 108" fill="none" stroke="#3E2723" stroke-width="3.5" stroke-linecap="round"/>
+    <rect x="62" y="94" width="10" height="18" rx="5" fill="#3E2723"/>
+    <rect x="128" y="94" width="10" height="18" rx="5" fill="#3E2723"/>
+    <path d="M 132 108 L 116 116" stroke="#3E2723" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="114" cy="117" r="4" fill="#E65100"/>
+  </g>
+  
+  <!-- Live 1-on-1 Call Badge -->
+  <g transform="translate(100, 168)">
+    <rect x="-42" y="-12" width="84" height="24" rx="12" fill="#2E7D32" stroke="#FFFFFF" stroke-width="1.5"/>
+    <text x="0" y="4" font-family="sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">📞 1-on-1 CALL</text>
+  </g>
+</svg>

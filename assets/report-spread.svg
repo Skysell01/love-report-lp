@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="600" height="380">
+  <defs>
+    <!-- Soft Book Spread Shadow -->
+    <filter id="spread-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#3D2004" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <g filter="url(#spread-shadow)">
+    <!-- Book Backing Base -->
+    <path d="M 20 40 Q 300 20 580 40 L 580 340 Q 300 360 20 340 Z" fill="#EAE0D5" />
+    
+    <!-- Left Page -->
+    <path d="M 25 35 Q 300 15 295 345 Q 160 355 25 335 Z" fill="#FFFFFF" stroke="#F5EBE0" stroke-width="1.5" />
+    
+    <!-- Right Page -->
+    <path d="M 305 345 Q 300 15 575 35 Q 575 335 305 345 Z" fill="#FFFFFF" stroke="#F5EBE0" stroke-width="1.5" />
+
+    <!-- Center Spine Crease -->
+    <path d="M 295 15 L 305 15 L 305 350 L 295 350 Z" fill="#D8C8B8" opacity="0.6" />
+    <line x1="300" y1="15" x2="300" y2="350" stroke="#B8A898" stroke-width="1.5" />
+
+    <!-- Page Edge Lines (Depth effect) -->
+    <path d="M 20 340 Q 160 358 295 348" stroke="#D0C0B0" stroke-width="2" fill="none" />
+    <path d="M 305 348 Q 440 358 580 340" stroke="#D0C0B0" stroke-width="2" fill="none" />
+
+    <!-- Left Page Content (DISCLAIMER) -->
+    <!-- Pink Frame Border -->
+    <rect x="40" y="48" width="240" height="275" fill="none" stroke="#E91E63" stroke-width="1" opacity="0.6" rx="2" />
+    
+    <text x="160" y="75" font-family="'Cinzel', 'Playfair Display', serif" font-size="16" font-weight="700" fill="#AD1457" text-anchor="middle" letter-spacing="2">DISCLAIMER</text>
+    
+    <!-- Left Page Paragraph Text lines -->
+    <g fill="#666666" font-family="'Lora', Georgia, serif" font-size="9" opacity="0.85">
+      <text x="50" y="100">This report is based on authentic Parashari principles</text>
+      <text x="50" y="115">of Vedic Astrology. All planetary calculations are done</text>
+      <text x="50" y="130">using exact birth coordinates (latitude, longitude) and</text>
+      <text x="50" y="145">precise planetary degrees for 98.4% accuracy.</text>
+      
+      <text x="50" y="175">The recommendations prescribed in this report are for</text>
+      <text x="50" y="190">spiritual guidance, relationship harmony, and personal</text>
+      <text x="50" y="205">growth. Vedic remedies provided are simple, non-commercial</text>
+      <text x="50" y="220">and easily actionable at home.</text>
+      
+      <text x="50" y="250">Your privacy is 100% guaranteed. Personal details</text>
+      <text x="50" y="265">and birth details are kept strictly confidential.</text>
+    </g>
+
+    <!-- Right Page Content (BEST WAY TO STUDY THE REPORT) -->
+    <!-- Pink Frame Border -->
+    <rect x="320" y="48" width="240" height="275" fill="none" stroke="#E91E63" stroke-width="1" opacity="0.6" rx="2" />
+
+    <text x="440" y="75" font-family="'Cinzel', 'Playfair Display', serif" font-size="14" font-weight="700" fill="#AD1457" text-anchor="middle" letter-spacing="1">BEST WAY TO STUDY THE REPORT</text>
+
+    <!-- Right Page Paragraph Text lines -->
+    <g fill="#666666" font-family="'Lora', Georgia, serif" font-size="9" opacity="0.85">
+      <text x="330" y="100">Read your Love Report with an open mind and quiet space.</text>
+      <text x="330" y="115">Focus first on your Venus &amp; Mars placements to understand</text>
+      <text x="330" y="130">your deep emotional and romantic attachment style.</text>
+
+      <text x="330" y="160">1. Review your 7th House Dasha &amp; Transits for marriage</text>
+      <text x="330" y="175">   timeline predictions.</text>
+      
+      <text x="330" y="200">2. Note down recommended Vedic remedies (mantras,</text>
+      <text x="330" y="215">   gemstones, auspicious days) for overcoming hurdles.</text>
+
+      <text x="330" y="240">3. Apply practical Do's &amp; Don'ts in daily communication</text>
+      <text x="330" y="255">   to enhance relationship harmony.</text>
+    </g>
+  </g>
+</svg>

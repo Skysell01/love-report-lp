@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 440" width="320" height="440">
+  <defs>
+    <!-- Book Shadow -->
+    <filter id="book-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="10" dy="15" stdDeviation="12" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <g filter="url(#book-shadow)">
+    <!-- Book 3D Spine Page Pages Edge -->
+    <path d="M 270 30 L 290 40 L 290 420 L 270 410 Z" fill="#EAEAEA" stroke="#D0D0D0" stroke-width="1" />
+    <line x1="275" y1="33" x2="275" y2="413" stroke="#CCCCCC" stroke-width="1" />
+    <line x1="280" y1="35" x2="280" y2="415" stroke="#CCCCCC" stroke-width="1" />
+    <line x1="285" y1="38" x2="285" y2="418" stroke="#CCCCCC" stroke-width="1" />
+
+    <!-- Book Front Cover -->
+    <rect x="30" y="20" width="240" height="390" rx="6" ry="6" fill="#FFFFFF" stroke="#F0E0D0" stroke-width="2" />
+    
+    <!-- Spine Line left -->
+    <line x1="38" y1="20" x2="38" y2="410" stroke="#F5C0D0" stroke-width="2" opacity="0.6" />
+
+    <!-- Pink Decorative Border Frame -->
+    <rect x="42" y="32" width="216" height="366" fill="none" stroke="#E91E63" stroke-width="1.5" rx="3" opacity="0.8" />
+    <rect x="46" y="36" width="208" height="358" fill="none" stroke="#E91E63" stroke-width="0.8" rx="2" stroke-dasharray="4,2" opacity="0.6" />
+
+    <!-- Pink Corner Flourishes -->
+    <path d="M 44 44 Q 56 44 56 56" fill="none" stroke="#E91E63" stroke-width="1.5" />
+    <path d="M 256 44 Q 244 44 244 56" fill="none" stroke="#E91E63" stroke-width="1.5" />
+    <path d="M 44 386 Q 56 386 56 374" fill="none" stroke="#E91E63" stroke-width="1.5" />
+    <path d="M 256 386 Q 244 386 244 374" fill="none" stroke="#E91E63" stroke-width="1.5" />
+
+    <!-- Hearts at Top -->
+    <g transform="translate(150, 75)" fill="none" stroke="#E91E63" stroke-width="2">
+      <path d="M 0 -5 C -5 -15 -18 -8 -10 2 L 0 12 L 10 2 C 18 -8 5 -15 0 -5 Z" fill="#E91E63" fill-opacity="0.1" />
+      <path d="M 12 -12 C 8 -20 -2 -14 4 -6 L 12 2 L 20 -6 C 26 -14 16 -20 12 -12 Z" fill="#E91E63" fill-opacity="0.2" transform="scale(0.7) translate(10, -10)" />
+    </g>
+
+    <!-- Book Title -->
+    <text x="150" y="105" font-family="'Cinzel', Georgia, serif" font-size="14" fill="#666666" text-anchor="middle" letter-spacing="1">Your</text>
+    <text x="150" y="145" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="700" font-style="italic" fill="#D81B60" text-anchor="middle" letter-spacing="1">Love</text>
+    <text x="150" y="175" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#880E4F" text-anchor="middle" letter-spacing="3">REPORT</text>
+
+    <!-- Subtitle Line & Brand -->
+    <line x1="60" y1="195" x2="240" y2="195" stroke="#E91E63" stroke-width="1" />
+    <text x="150" y="215" font-family="'Cinzel', Georgia, serif" font-size="14" font-weight="700" fill="#AD1457" text-anchor="middle" letter-spacing="4">RUDRAVEDA</text>
+    <line x1="60" y1="230" x2="240" y2="230" stroke="#E91E63" stroke-width="1" />
+
+    <!-- Couple Line Art Illustration -->
+    <g transform="translate(150, 300)" fill="none" stroke="#D81B60" stroke-width="1.8" stroke-linecap="round">
+      <!-- Man & Woman embracing outline -->
+      <path d="M -30 -35 C -15 -55 0 -45 5 -25 C 10 -5 0 20 -30 40" />
+      <path d="M 30 -35 C 15 -55 0 -45 -5 -25 C -10 -5 0 20 30 40" />
+      <!-- Heart line connection -->
+      <path d="M 0 10 C -10 0 -20 15 0 32 C 20 15 10 0 0 10 Z" fill="#D81B60" fill-opacity="0.15" />
+    </g>
+  </g>
+</svg>

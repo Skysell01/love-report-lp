@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <!-- Glow filter for astro wheel -->
+    <filter id="gold-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComponentTransfer in="blur" result="glow">
+        <feFuncA type="linear" slope="0.6"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity="0.95" filter="url(#gold-glow)">
+    <!-- Outer Decorative Rings -->
+    <circle cx="250" cy="250" r="235" stroke-width="1" stroke-dasharray="3,3" />
+    <circle cx="250" cy="250" r="225" stroke-width="2" />
+    <circle cx="250" cy="250" r="215" stroke-width="1" />
+    <circle cx="250" cy="250" r="160" stroke-width="1.5" />
+    <circle cx="250" cy="250" r="115" stroke-width="1" />
+    <circle cx="250" cy="250" r="65" stroke-width="2" />
+
+    <!-- 12 Radial Rays -->
+    <line x1="250" y1="25" x2="250" y2="475" />
+    <line x1="25" y1="250" x2="475" y2="250" />
+    
+    <line x1="55" y1="137.5" x2="445" y2="362.5" />
+    <line x1="137.5" y1="55" x2="362.5" y2="445" />
+    
+    <line x1="55" y1="362.5" x2="445" y2="137.5" />
+    <line x1="137.5" y1="445" x2="362.5" y2="55" />
+
+    <!-- Central Sun Face -->
+    <g transform="translate(250, 250)">
+      <!-- Sun Center Circle -->
+      <circle cx="0" cy="0" r="45" fill="#FFE0B2" fill-opacity="0.15" stroke="#FFFFFF" stroke-width="2" />
+      
+      <!-- Sun Rays -->
+      <path d="M 0 -60 L 5 -48 L -5 -48 Z" fill="#FFFFFF" />
+      <path d="M 0 60 L 5 48 L -5 48 Z" fill="#FFFFFF" />
+      <path d="M -60 0 L -48 5 L -48 -5 Z" fill="#FFFFFF" />
+      <path d="M 60 0 L 48 5 L 48 -5 Z" fill="#FFFFFF" />
+
+      <path d="M -42 -42 L -34 -30 L -30 -34 Z" fill="#FFFFFF" />
+      <path d="M 42 42 L 34 30 L 30 34 Z" fill="#FFFFFF" />
+      <path d="M -42 42 L -30 34 L -34 30 Z" fill="#FFFFFF" />
+      <path d="M 42 -42 L 30 -34 L 34 -30 Z" fill="#FFFFFF" />
+
+      <!-- Sun Face Features -->
+      <!-- Eyes -->
+      <path d="M -16 -8 Q -10 -15 -4 -8 Q -10 -5 -16 -8 Z" fill="#FFFFFF" />
+      <path d="M 4 -8 Q 10 -15 16 -8 Q 10 -5 4 -8 Z" fill="#FFFFFF" />
+      <circle cx="-10" cy="-9" r="2" fill="#E65100" />
+      <circle cx="10" cy="-9" r="2" fill="#E65100" />
+      
+      <!-- Nose & Lips -->
+      <path d="M 0 -4 L -3 6 L 2 6" stroke="#FFFFFF" stroke-width="1.5" />
+      <path d="M -10 16 Q 0 24 10 16 Q 0 19 -10 16 Z" fill="#FFFFFF" />
+    </g>
+
+    <!-- Star dots on outer points -->
+    <circle cx="250" cy="15" r="4" fill="#FFFFFF" />
+    <circle cx="250" cy="485" r="4" fill="#FFFFFF" />
+    <circle cx="15" cy="250" r="4" fill="#FFFFFF" />
+    <circle cx="485" cy="250" r="4" fill="#FFFFFF" />
+  </g>
+
+  <!-- 12 Zodiac Text Names -->
+  <g fill="#FFFFFF" font-family="'Cinzel', 'Playfair Display', serif" font-size="14" font-weight="700" text-anchor="middle" letter-spacing="2">
+    <!-- Curved Zodiac Names -->
+    <text transform="translate(250, 50) rotate(0)">PISCES</text>
+    <text transform="translate(345, 75) rotate(30)">ARIES</text>
+    <text transform="translate(415, 145) rotate(60)">TAURUS</text>
+    <text transform="translate(440, 245) rotate(90)">GEMINI</text>
+    <text transform="translate(415, 345) rotate(120)">CANCER</text>
+    <text transform="translate(345, 420) rotate(150)">LEO</text>
+    <text transform="translate(250, 445) rotate(180)">VIRGO</text>
+    <text transform="translate(155, 420) rotate(210)">LIBRA</text>
+    <text transform="translate(85, 345) rotate(240)">SCORPIO</text>
+    <text transform="translate(60, 245) rotate(270)">SAGITTARIUS</text>
+    <text transform="translate(85, 145) rotate(300)">CAPRICORN</text>
+    <text transform="translate(155, 75) rotate(330)">AQUARIUS</text>
+  </g>
+</svg>
